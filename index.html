@@ -112,12 +112,13 @@
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Stop</button>
             <button class="mdl-button mdl-js-bplayutton mdl-button--raised mdl-button--colored">play</button>
           </span>
-          <div class="video-frame">
-            <video id="webCamWindow" autoplay style="margin-left:100px;"></video>
-            <div id="movement" style="margin-left:100px;"></div>
-          </div>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Stop</button>
-          <button class="mdl-button mdl-js-bplayutton mdl-button--raised mdl-button--colored">play</button>
+          <!-- kalin thibba code set eka. meken thama motion eka gaththe -->
+          <!-- <div class="video-frame"> 
+            <video id="webCamWindow" autoplay style="margin-left:10%; margin-top:10%;"></video>
+            <div id="movement" style="margin-left:10%; margin-top:10%;"></div>
+          </div> -->
+<video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+          
         </div>
 
         <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
