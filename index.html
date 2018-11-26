@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html> -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -249,6 +249,30 @@
 <script type="text/javascript" src="js/MotionDetector/Core.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/getusermedia.js"></script>
+
+
+<script type="text/javascript">
+  //---------------------
+      // TAKE A SNAPSHOT CODE
+      //---------------------
+      var canvas, ctx;
+
+      function init() {
+        // Get the canvas and obtain a context for
+        // drawing in it
+        canvas = document.getElementById("myCanvas");
+        ctx = canvas.getContext('2d');
+      }
+
+      function snapshot() {
+         // Draws current image from the video element into the canvas
+        ctx.drawImage(video, 100,100, canvas.width, canvas.height);
+        
+      }
+
+
+</script>
+
 <!-- Video Capture scripts -->
 </body>
 </html>
