@@ -123,10 +123,12 @@
   <button onclick="snapshot();" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Take Snapshot</button> 
 </p>
 
-<video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+<video onclick="snapshot(this);" width=600 height=500 id="video" controls autoplay style="transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */"></video>
 
 <p>Screenshots : <p>
-    <canvas  id="myCanvas" width="400" height="350"></canvas>  
+    <canvas  id="myCanvas" width="10" height="10"></canvas>  
 
 
 
