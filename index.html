@@ -36,7 +36,7 @@
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
       <div class="mdl-layout__header-row">
         <img src="images/logo.png" width="60">
-        <span class="mdl-layout-title">Real Time Background Monitoring System</span>
+        <span class="mdl-layout-title">Real Time Background Monitoring System<br> &copy Beta version 1.0</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
           <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -115,15 +115,18 @@
 
         Screenshots : <p>
           <canvas  id="myCanvas" width="100" height="100"></canvas>
-
         </div>
+
         <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
           <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+
             <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
+              <canvas width="100" height="100" id="canvas">Sorry, no canvas available</canvas>
               <h2 class="mdl-card__title-text">Updates</h2>
             </div>
+
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-              Updates of the users will shown in here
+              Latestly Captured images appears here.
             </div>
             <div class="mdl-card__actions mdl-card--border">
               <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Authenticate</a>
@@ -137,19 +140,19 @@
                 <ul>
                   <li>
                     <i class="material-icons mdl-list__item-icon">person</i>
-                    Bryan Cranston
+                    Bryan
                   </li>
                   <iconli>
                     <i class="material-icons mdl-list__item-icon">person</i>
-                    Bryan Cranston
+                    Ann
                   </li>
                   <li>
                     <i class="material-icons mdl-list__item-icon">person</i>
-                    Bryan Cranston
+                    Bob
                   </li>
                   <li>
                     <i class="material-icons mdl-list__item-icon">person</i>
-                    Bryan Cranston
+                    Tailor
                   </li>
                 </ul>
               </div>
@@ -172,16 +175,8 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
 <script>
-//--------------------
-// GET USER MEDIA CODE
-//--------------------
-//--------------------
-// GET USER MEDIA CODE
-//--------------------
-navigator.getUserMedia = ( navigator.getUserMedia ||
-  navigator.webkitGetUserMedia ||
-  navigator.mozGetUserMedia ||
-  navigator.msGetUserMedia);
+
+navigator.getUserMedia = ( navigator.getUserMedia ||navigator.webkitGetUserMedia ||navigator.mozGetUserMedia ||navigator.msGetUserMedia);
 
   var video;
   var webcamStream;
@@ -215,33 +210,51 @@ navigator.getUserMedia = ( navigator.getUserMedia ||
 
   function stopWebcam() {
     webcamStream.stop();
+    console.log("Stop button clicked");
   }
   //---------------------
   // TAKE A SNAPSHOT CODE
   //---------------------
-  var canvas, ctx;
-
-  function init() {
-    // Get the canvas and obtain a context for
-    // drawing in it
-    canvas = document.getElementById("myCanvas");
+  /**
+ *    Ken Fyrstenberg Nilsen
+ *    Abidas Software
+*/
+var canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d');
-  }
 
-  function snapshot() {
-    // Draws current image from the video element into the canvas
-    ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-    console.log('harshaniii');
-
-    convertCanvasToImage(canvas);
-  }
-
-  // Converts canvas to an image
-function convertCanvasToImage(canvas) {
-var image = new Image();
-image.src = canvas.toDataURL("image/png");
-return image;
+/**
+ * Demonstrates how to download a canvas an image with a single
+ * direct click on a link.
+ */
+function doCanvas() {
+    /* draw something */
+    ctx.fillStyle = '#f90';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#fff';
+    ctx.font = '60px sans-serif';
+    ctx.fillText('Code Project', 10, canvas.height / 2 - 15);
+    ctx.font = '26px sans-serif';
+    ctx.fillText('Click link below to save this as image', 15, canvas.height / 2 + 35);
 }
+
+function downloadCanvas(link, canvasId, filename) {
+    link.href = document.getElementById(canvasId).toDataURL();
+    link.download = filename;
+}
+
+/** 
+ * The event handler for the link's onclick event. We give THIS as a
+ * parameter (=the link element), ID of the canvas and a filename.
+*/
+document.getElementById('download').addEventListener('click', function() {
+    downloadCanvas(this, 'canvas', 'test.png');
+}, true);
+
+/**
+ * Draw something to canvas
+ */
+doCanvas();
+
 
   </script>
   <!-- Video Capture scripts -->
