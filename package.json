@@ -1,0 +1,30 @@
+{
+  "name": "rtbms-webapp",
+  "version": "1.0.0",
+  "description": "web app for rtbms(Real Time Background Monitoring System)-University 3rd year project",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "firebase-admin": "^6.4.0",
+    "nodemailer": "^5.0.0",
+    "randomstring": "^1.1.5",
+    "ejs": "^2.6.1",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChathuraSam/rtbms-webApp.git"
+  },
+  "author": "chathura.samarajeewa@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChathuraSam/rtbms-webApp/issues"
+  },
+  "homepage": "https://github.com/ChathuraSam/rtbms-webApp#readme"
+}
