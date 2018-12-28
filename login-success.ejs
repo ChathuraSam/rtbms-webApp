@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="./public/css/material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="./public/css/css-animations.css">
+
+	<style>
+	body {font-family: Arial, Helvetica, sans-serif;background-color: #ced6e0;}
+	form {border: 3px solid #f1f1f1;}
+
+	input[type=text], input[type=password] {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		box-sizing: border-box;
+	}
+
+	button {
+		background-color: #4CAF50;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+	}
+
+	button:hover {
+		opacity: 0.8;
+	}
+
+	.cancelbtn {
+		width: auto;
+		padding: 10px 18px;
+		background-color: #f44336;
+	}
+
+	.imgcontainer {
+		text-align: center;
+		margin: 24px 0 12px 0;
+	}
+
+	img.avatar {
+		width: 40%;
+	}
+
+	.container {
+		padding: 16px;
+	}
+
+	span.psw {
+		float: right;
+		padding-top: 16px;
+	}
+
+	/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+		span.psw {
+			display: blockaction_page;
+			float: none;
+		}
+		.cancelbtn {
+			width: 100%;
+		}
+	}
+
+	#login-card{
+		width: 30%;
+		height: 40%;
+		background-color: white;
+		margin-left: 35%;
+		margin-top: 3%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+</style>
+
+<link rel="stylesheet" href="./public/css/css-animations.css">
+</head>
+<body>
+
+
+	<div id =login-card>
+		<form action="/login-success" method="post">
+			<div class="imgcontainer">
+				<img src="./images/logo1.jpeg" alt="Avatar" class="avatar">
+			</div>
+
+			<div class="container bounceInDown">
+				<label for="uname"><b>You have Successfuly Logged In! Redirecting to main form</b></label>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
