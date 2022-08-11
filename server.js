@@ -274,8 +274,8 @@ function sendEmailPassword(email, newPassword) {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'chathura.samarajeewa@gmail.com',
-      pass: 'btyxdinovrxtclcb'
+      user: 'SEFSEF',
+      pass: 'SDFSDF'
     }
   });
 
